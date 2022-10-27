@@ -7,7 +7,7 @@ const scriptName = "postinstallDev";
 const plugin: Plugin = {
   hooks: {
     async afterAllInstalled(project: Project, options: InstallOptions) {
-      if (options.mode === "update-lockfile") {
+      if (options.mode === "update-lockfile" || options.mode === "skip-build") {
         return;
       }
       const locator = project.topLevelWorkspace.anchoredLocator;
